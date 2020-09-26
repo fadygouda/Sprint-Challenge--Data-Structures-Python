@@ -20,11 +20,12 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-search = BSTNode("something")
-for name1 in names_1:
-    search.insert(name1)
-for name2 in names_2:
-    search.insert(name2)
+search = BSTNode("")
+for name in names_1:
+    search.insert(name)
+for name in names_2:
+    if search.contains(name):
+        duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
